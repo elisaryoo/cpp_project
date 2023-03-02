@@ -5,32 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eryoo <eryoo@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 15:12:39 by eryoo             #+#    #+#             */
-/*   Updated: 2023/02/15 06:55:20 by eryoo            ###   ########.fr       */
+/*   Created: 2023/02/23 08:38:01 by eryoo             #+#    #+#             */
+/*   Updated: 2023/02/23 08:59:06 by eryoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include "Base.hpp"
 
-int	main(void)
-{
-	PhoneBook	phonebook;
-	std::string		info;
+int main(void) {
+	Base *ptr;
 
-	while (true){
-		std::cout << ">> ";
-		getline(std::cin, info);
-		if (info.compare("ADD")==0)
-			phonebook.setNewContact();
-		else if (info.compare("SEARCH")==0)
-			phonebook.searchContact();
-		else if (info.compare("EXIT")==0)
-			break;
-		else
-			std::cout << "Please do input the right commands: ADD, SEARCH OR EXIT" << std::endl;
+	for (int i = 0; i < 5; i++){
+		std::cout << "---- New test ----" << std::endl;
+		ptr = generate();
+		std::cout << "Base *p: ";
+		identify(*ptr);
+		std::cout << std::endl;
+		std::cout << "Base &p: ";
+		identify(ptr);
+		std::cout << std::endl;
+		delete ptr;
 	}
-	return (0);
 }

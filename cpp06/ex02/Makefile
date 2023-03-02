@@ -1,9 +1,9 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-NAME = phonebook
+NAME = main
 
-FILES = PhoneBook.cpp Contact.cpp main.cpp 
+FILES = Base.cpp main.cpp 
 
 all: $(NAME)
 
