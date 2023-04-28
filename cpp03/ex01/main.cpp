@@ -13,14 +13,18 @@
 #include "ScavTrap.hpp"
 
 int main(void) {
-	ScavTrap a("Johnny");
-	
-	a.attack("Willy");
-	a.takeDamage(6);
-	a.takeDamage(30);
-	a.beRepaired(6);
-	a.guardGate();
-	a.takeDamage(50);
+	ScavTrap johnny("Johnny");
+	ClapTrap fakeJohnny("Fake Johnny");
+
+	//ScavTrap attack version
+	johnny.attack("Willy");
+	//ClapTrap attack version
+	fakeJohnny.attack("Fake Willy");
+
+	johnny.guardGate();
+	johnny.takeDamage(55);
+	johnny.beRepaired(6);
+	johnny.takeDamage(35);
 
 	return (0);
 }

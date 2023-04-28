@@ -26,7 +26,7 @@ Intern & Intern::operator=(const Intern &cpy) {
 }
 
 const char* Intern::NoFormMatch::what() const throw() {
-	return ("No form matched");
+	return ("No form name matched");
 }
 
 AForm* Intern::invalidForm(const std::string target) const {
@@ -52,20 +52,23 @@ AForm* Intern::shruberryCreationForm(const std::string target) const {
 }
 
 AForm* Intern::makeForm(const std::string name, const std::string target) {
-	std::string formOptions[4] = {"invalid form", "presidential pardon", 
-								"robotomy request", "shruberry creation"};
+	std::string formOptions[3] = {"presidential pardon", "robotomy request", "shruberry creation"};
+
+	if (target.empty())
+	{
+		throw Intern::NoFormMatch();
+		return (NULL);
+	}
 	AForm* (Intern::*f[4])(const::std::string) const = {
-		&Intern::invalidForm,
 		&Intern::presidentialPardonForm,
 		&Intern::robotomyRequestForm,
 		&Intern::shruberryCreationForm,
+		&Intern::invalidForm,
 	};
-
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 3; i++) {
 		if (!formOptions[i].compare(name)) {
 			return ((this->*f[i])(target));
 		}
 	}
-	throw Intern::NoFormMatch();
-	return((this->*f[4])(target));
+	return((this->*f[3])(target));
 }

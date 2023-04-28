@@ -6,20 +6,19 @@
 /*   By: eryoo <eryoo@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 23:27:35 by eryoo             #+#    #+#             */
-/*   Updated: 2023/02/23 08:31:24 by eryoo            ###   ########.fr       */
+/*   Updated: 2023/04/27 01:27:52 by eryoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Data.hpp"
 
 int main(void) {
-	Data* test = new Data(100, "Hello!");
+	Data* test = new Data("Hello!");
 	Data*	 deserialize;
 	uintptr_t serialized;
 
 	std::cout << "Test adress: " << test << std::endl
 	<< "<Test values>" << std::endl
-	<< " Favorite number: " << test->getFaveNumber() << std::endl
 	<< " Greeting: " << test->getGretting() << std::endl;
 
 	serialized = test->serialize(test);
@@ -32,7 +31,6 @@ int main(void) {
 
 	std::cout << "Deserialize adress: " << deserialize << std::endl
 	<< "<Test values>" << std::endl
-	<< " Favorite number: " << test->getFaveNumber() << std::endl
 	<< " Greeting: " << test->getGretting() << std::endl;
 	
 	delete test;

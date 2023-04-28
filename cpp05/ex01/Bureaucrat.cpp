@@ -50,14 +50,14 @@ unsigned int Bureaucrat::getGrade() const {
 }
 
 void	Bureaucrat::increment() {
-	if (this->_grade == 1)
+	if (this->_grade < 2)
 		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade--;
 }
 
 void	Bureaucrat::decrement() {
-	if (this->_grade == 150)
+	if (this->_grade > 149)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade++;
@@ -71,9 +71,9 @@ const char* Bureaucrat::GradeTooLowException::what() const throw(){
 	return ("Grade is too low.");
 }
 
-std::ostream & operator<<(std::ostream & o,const Bureaucrat &cpy) {
-	o << cpy.getName() << ", bureaucrat grade " << cpy.getGrade() << std::endl;
-	return (o);
+std::ostream & operator<<(std::ostream & out,const Bureaucrat &cpy) {
+	out << cpy.getName() << ", bureaucrat grade " << cpy.getGrade() << std::endl;
+	return (out);
 }
 
 void			Bureaucrat::signForm(Form &cpy) {

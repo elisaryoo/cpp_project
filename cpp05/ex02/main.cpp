@@ -19,8 +19,28 @@
 int main() {
 	std::cout << std::endl;
 	try {
+		std::cout << "Fail form" << std::endl;
+		Bureaucrat grade ("fail president", 10);
 		PresidentialPardonForm president("test president");
-		Bureaucrat grade ("dummy president", 6);
+		president.beSigned(grade);
+		grade.executeForm(president);
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	try {
+		std::cout << "Unsigned fail form" << std::endl;
+		Bureaucrat grade ("dummy president", 3);
+		PresidentialPardonForm president("test president");
+		grade.executeForm(president);
+	} catch (std::exception & e){
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	try {
+		std::cout << "Presidential form" << std::endl;
+		Bureaucrat grade ("dummy president", 3);
+		PresidentialPardonForm president("test president");
 		president.beSigned(grade);
 		grade.executeForm(president);
 	} catch (std::exception & e){
@@ -28,8 +48,9 @@ int main() {
 	}
 	std::cout << std::endl;
 	try {
+		std::cout << "Robotomy form" << std::endl;
+		Bureaucrat grade ("dummy robot", 10);
 		RobotomyRequestForm robot("test robot");
-		Bureaucrat grade ("dummy robot", 6);
 		robot.beSigned(grade);
 		grade.executeForm(robot);
 	} catch (std::exception & e){
@@ -37,8 +58,9 @@ int main() {
 	}
 	std::cout << std::endl;
 	try {
+		std::cout << "Shruberry form" << std::endl;
+		Bureaucrat grade ("dummy robot", 10);
 		ShruberryCreationForm tree("test tree");
-		Bureaucrat grade ("dummy robot", 6);
 		tree.beSigned(grade);
 		grade.executeForm(tree);
 	} catch (std::exception & e){

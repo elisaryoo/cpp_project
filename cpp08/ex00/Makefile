@@ -10,5 +10,12 @@ all: $(NAME)
 $(NAME):
 	$(CC) $(CFLAGS) -o $(NAME) $(FILES)
 
+run:
+	./$(NAME)
+
 clean:
 	$(RM) $(NAME)
+
+fclean: clean
+
+re: clean all

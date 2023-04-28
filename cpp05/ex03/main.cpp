@@ -18,7 +18,27 @@
 
 int main(void) {
 	try {
-		std::cout << "Robotomy" << std::endl;
+		std::cout << "Invalid form" << std::endl;
+		Intern overWorker;
+		AForm *pt;
+		pt = overWorker.makeForm("aaaaa", "Tommy");
+		delete pt;
+	} catch (std::exception &e){
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	try {
+		std::cout << "Nonexistent form" << std::endl;
+		Intern overWorker;
+		AForm *pt;
+		pt = overWorker.makeForm("something", "");
+		delete pt;
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	try {
+		std::cout << "Robotomy form" << std::endl;
 		Intern overWorker;
 		AForm *pt;
 		pt = overWorker.makeForm("robotomy request", "Tommy");
@@ -31,7 +51,7 @@ int main(void) {
 	}
 	std::cout << std::endl;
 	try {
-		std::cout << "Presidential" << std::endl;
+		std::cout << "Presidential form" << std::endl;
 		Intern overWorker;
 		AForm *pt;
 		pt = overWorker.makeForm("presidential pardon", "Tommy");
@@ -44,23 +64,13 @@ int main(void) {
 	}
 	std::cout << std::endl;
 	try {
-		std::cout << "Shruberry" << std::endl;
+		std::cout << "Shruberry form" << std::endl;
 		Intern overWorker;
 		AForm *pt;
 		pt = overWorker.makeForm("shruberry creation", "Tommy");
 		Bureaucrat grade = Bureaucrat("Dummy", 1);
 		pt->beSigned(grade);
 		pt->execute(grade);
-		delete pt;
-	} catch (std::exception &e){
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	try {
-		std::cout << "Invalid" << std::endl;
-		Intern overWorker;
-		AForm *pt;
-		pt = overWorker.makeForm("invalid form", "Tommy");
 		delete pt;
 	} catch (std::exception &e){
 		std::cout << e.what() << std::endl;

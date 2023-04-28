@@ -6,7 +6,7 @@
 /*   By: eryoo <eryoo@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 05:54:01 by eryoo             #+#    #+#             */
-/*   Updated: 2023/02/24 06:17:32 by eryoo            ###   ########.fr       */
+/*   Updated: 2023/04/27 21:46:27 by eryoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,22 @@ int main(void) {
 
 	std::cout << "< SWAP test >" << std::endl
 	<< "a = " << a << std::endl
-	<< "b = " << a << std::endl
+	<< "b = " << b << std::endl
 	<< "Now swapping!!! 🪄" << std::endl;
 	::swap(a, b);
 	std::cout << "new a = " << a << std::endl
-	<< "new b = " << a << std::endl;
+	<< "new b = " << b << std::endl;
 
 	std::cout << std::endl;
 	
-	std::cout << "c = " << a << std::endl
-	<< "d = " << a << std::endl
+	std::cout << "c = " << c << std::endl
+	<< "d = " << d << std::endl
 	<< "Now swapping!!! 🪄" << std::endl;
 	::swap(c, d);
-	std::cout << "new c = " << a << std::endl
-	<< "new d = " << a << std::endl;
+	std::cout << "new c = " << c << std::endl
+	<< "new d = " << d << std::endl;
+
+	std::cout << std::endl;
 	
 	std::cout << "< MAX test >" << std::endl
 	<< "int values max(a, b) = " << ::max(a,b) << std::endl

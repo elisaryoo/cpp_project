@@ -62,12 +62,20 @@ void		AForm::beSigned(const Bureaucrat &cpy) {
 		throw AForm::GradeTooLowException();
 }
 
+bool	AForm::isItSigned() const {
+	return (this->_signed);
+}
+
 const char* AForm::GradeTooHighException::what() const throw(){
 	return ("Grade is too high.");
 }
 
 const char* AForm::GradeTooLowException::what() const throw(){
 	return ("Grade is too low.");
+}
+
+const char* AForm::UnsignedFormException::what() const throw(){
+	return ("The form is unsigned!");
 }
 
 std::ostream & operator<<(std::ostream & o,const AForm &cpy) {

@@ -6,7 +6,7 @@
 /*   By: eryoo <eryoo@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 05:54:55 by eryoo             #+#    #+#             */
-/*   Updated: 2023/03/01 02:46:05 by eryoo            ###   ########.fr       */
+/*   Updated: 2023/04/27 22:52:38 by eryoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Array {
 	public:
 		Array(void) : _array(NULL), _length(0) {};
 		Array(unsigned int n) : _array(new T[n]), _length(n) {};
-		Array(Array const & cpy) : _array(NULL) { this->operator(cpy)};
-		~Array(void) { delete [] this->_array};
+		Array(Array const & cpy) { *this = cpy; };
+		~Array(void) { delete [] this->_array; };
 
 		unsigned int size(void) const {return (this->_length);};
 		
@@ -45,7 +45,7 @@ class Array {
 			virtual const char * what() const throw() {
 				return ("Array's index is out of range!");
 			};
-		}
+		};
 
 	private: 
 		T * _array;

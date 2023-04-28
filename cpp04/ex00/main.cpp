@@ -17,33 +17,39 @@
 #include "WrongCat.hpp"
 
 int main (void) {
-	const Animal *meta = new Animal();
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
+	{
+		const Animal *meta = new Animal();
+		const Animal *j = new Dog();
+		const Animal *i = new Cat();
 
-	std::cout << std::endl;
-	std::cout << "- Standard Given test -" << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
+		std::cout << std::endl;
+		std::cout << "- Standard Given test -" << std::endl;
+		std::cout << j->getType() << " " << std::endl;
+		std::cout << i->getType() << " " << std::endl;
+		i->makeSound();
+		j->makeSound();
+		std::cout << std::endl;
 
-	delete meta;
-	delete j;
-	delete i;
+		delete meta;
+		delete j;
+		delete i;
+	}
 	
-	std::cout << std::endl;
-	std::cout << "- Wrong Animal test -" << std::endl;
-	const WrongAnimal *t1 = new WrongAnimal();
-	const WrongAnimal *t2 = new WrongCat();
-	std::cout << std::endl;
-	std::cout << t1->getType() << " " << std::endl;
-	t1->makeSound();
-	t2->makeSound();
-	std::cout << std::endl;
-	
-	delete t1;
-	delete t2;
+	{
+		std::cout << std::endl;
+		std::cout << "- Wrong Animal test -" << std::endl;
+		const WrongAnimal *t1 = new WrongAnimal();
+		const WrongAnimal *t2 = new WrongCat();
+		std::cout << std::endl;
+		std::cout << t1->getType() << " " << std::endl;
+		std::cout << t2->getType() << " " << std::endl;
+		t1->makeSound();
+		t2->makeSound();
+		std::cout << std::endl;
+		
+		delete t1;
+		delete t2;
+	}
 
 	return (0);
 }

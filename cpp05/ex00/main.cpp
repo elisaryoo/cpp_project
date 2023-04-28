@@ -44,6 +44,7 @@ int main() {
 	std::cout << std::endl;
 	try {
 		Bureaucrat bottomB = Bureaucrat("Bottom bureaucrat", 150);
+		bottomB.decrement();
 		std::cout << bottomB;
 	} catch (std::exception & e){
 		std::cout << e.what() << std::endl;

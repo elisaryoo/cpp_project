@@ -50,14 +50,14 @@ unsigned int Bureaucrat::getGrade() const {
 }
 
 void	Bureaucrat::increment() {
-	if (this->_grade == 1)
+	if (this->_grade < 2)
 		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade--;
 }
 
 void	Bureaucrat::decrement() {
-	if (this->_grade == 150)
+	if (this->_grade > 149)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_grade++;

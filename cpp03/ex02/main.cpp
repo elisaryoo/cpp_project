@@ -13,13 +13,15 @@
 #include "FragTrap.hpp"
 
 int main () {
-	FragTrap a("Jimmy");
+	FragTrap jimmy("Jimmy");
 
-	a.attack("Pablo");
-	a.takeDamage(5);
-	a.takeDamage(10);
-	a.beRepaired(2);
-	a.highFivesGuys();
-	a.takeDamage(60);
+	jimmy.takeDamage(5);
+	jimmy.attack("Pablo");
+	jimmy.takeDamage(10);
+	jimmy.beRepaired(2);
+	jimmy.highFivesGuys();
+	jimmy.takeDamage(60);
+	jimmy.highFivesGuys();
+
 	return (0);
 }

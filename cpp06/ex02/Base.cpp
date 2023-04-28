@@ -6,7 +6,7 @@
 /*   By: eryoo <eryoo@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:37:58 by eryoo             #+#    #+#             */
-/*   Updated: 2023/02/23 08:58:24 by eryoo            ###   ########.fr       */
+/*   Updated: 2023/04/27 09:37:10 by eryoo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	identify(Base *p) {
 	else if (dynamic_cast<C*>(p))
 		std::cout << "C" << std::endl;
 	else
-		std::cout << "Specied Base not available" << std::endl;
+		std::cout << "Specified Base not available" << std::endl;
 }
 
 void	identify(Base &p) {

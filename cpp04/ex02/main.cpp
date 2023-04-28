@@ -16,6 +16,7 @@
 #include "Brain.hpp"
 
 int main (void) {
+	// if you uncomment the line below it won't compile :)
 	// AAnimal *fail = new AAnimal();
 	
 	std::cout << "<< Testing default constructor >>"<<std::endl;

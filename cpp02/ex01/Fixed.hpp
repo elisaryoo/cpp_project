@@ -34,6 +34,6 @@ class Fixed {
 		static const int	_bits = 8;
 };
 
-std::ostream & operator<<(std::ostream & out, Fixed const & cpy);
+	std::ostream & operator<<(std::ostream & out, Fixed const & cpy);
 
 #endif 

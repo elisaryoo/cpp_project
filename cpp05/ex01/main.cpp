@@ -30,21 +30,27 @@ int main() {
 	}
 	std::cout << std::endl;
 	try {
-		Form topB = Form("Top Form", 1, 100);
-		std::cout << topB;
+		Bureaucrat topB = Bureaucrat("Your top bureaucrat", 1);
+		Form topF = Form("Top Form", 1, 100);
+		topB.signForm(topF);
+		std::cout << topF;
 	} catch (std::exception & e){
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 	try {
-		Form averageB = Form("Average Form", 75, 120);
-		std::cout << averageB;
+		Bureaucrat averageB = Bureaucrat("Your average bureaucrat", 74);
+		Form averageF = Form("Average Form", 75, 120);
+		averageB.signForm(averageF);
+		std::cout << averageF;
 	} catch (std::exception & e){
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 	try {
-		Form bottomB = Form("Bottom Form", 20 , 150);
+		Bureaucrat bottomB = Bureaucrat("Your bottom bureaucrat", 130);
+		Form bottomF = Form("Bottom Form", 20 , 150);
+		bottomB.signForm(bottomF);
 		std::cout << bottomB;
 	} catch (std::exception & e){
 		std::cout << e.what() << std::endl;

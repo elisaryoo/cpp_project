@@ -31,7 +31,9 @@ ShruberryCreationForm & ShruberryCreationForm::operator=(ShruberryCreationForm c
 }
 
 void	ShruberryCreationForm::execute(Bureaucrat const &cpy) const {
-	if (cpy.getGrade() > this->getExecuteGrade())
+	if (this->isItSigned() == false)
+		throw AForm::UnsignedFormException();
+	else if (cpy.getGrade() > this->getExecuteGrade())
 		throw AForm::GradeTooLowException();
 	else {
 		std::string fileName = this->_target + "_shruberry";
@@ -43,9 +45,9 @@ void	ShruberryCreationForm::execute(Bureaucrat const &cpy) const {
 			<<"	    @\\  \\/@| @  | @\n"
 			<<"	   @__\\@ \\ |/ \\| / @\n"
 			<<"	_   _\\|@|  ||/__/@\n"
-			<<"	   	/  \\ \\  / /__\n"
-			<<"    @    \\  \\/ /   @\n"
-			<<"          |   |\n"
+			<<"	     / \\  \\  / /__\n"
+			<<"       @    \\  \\/ /   @\n"
+			<<"             |   |\n"
 			<<"			 |   |\n"
 			<<"			 |   |\n"
 			<<"		    ~|   |~\n"

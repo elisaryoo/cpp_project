@@ -50,6 +50,6 @@ class Bureaucrat {
 		int					_grade;
 };
 
-std::ostream & operator<<(std::ostream & o,const Bureaucrat &cpy);
+std::ostream & operator<<(std::ostream & out,const Bureaucrat &cpy);
 
 #endif

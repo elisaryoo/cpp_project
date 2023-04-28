@@ -20,7 +20,7 @@ class WrongAnimal {
 	public:
 		WrongAnimal();
 		WrongAnimal(const WrongAnimal & cpy);
-		~WrongAnimal();
+		virtual ~WrongAnimal();
 
 		WrongAnimal & operator=(const WrongAnimal & cpy);
 

@@ -69,10 +69,10 @@ const char* Form::GradeTooLowException::what() const throw(){
 	return ("Grade is too low.");
 }
 
-std::ostream & operator<<(std::ostream & o,const Form &cpy) {
-	o << "Name: " << cpy.getName() << std::endl;
-	o << "Signed: " << cpy.getSigned() << std::endl;
-	o << "Required signed grade: " << cpy.getSignGrade() << std::endl;
-	o << "Required executed grade: " << cpy.getExecuteGrade() << std::endl;
-	return (o);
+std::ostream & operator<<(std::ostream & out,const Form &cpy) {
+	out << "Name: " << cpy.getName() << std::endl;
+	out << "Signed: " << cpy.getSigned() << std::endl;
+	out << "Required signed grade: " << cpy.getSignGrade() << std::endl;
+	out << "Required executed grade: " << cpy.getExecuteGrade() << std::endl;
+	return (out);
 }

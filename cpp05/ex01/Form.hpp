@@ -53,6 +53,6 @@ class Form {
 		const unsigned int _executeGrade;
 };
 
-std::ostream & operator<<(std::ostream & o,const Form &cpy);
+std::ostream & operator<<(std::ostream & out,const Form &cpy);
 
 #endif

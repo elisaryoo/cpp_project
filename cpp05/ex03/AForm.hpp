@@ -35,6 +35,7 @@ class AForm {
 		unsigned int			getExecuteGrade()const;
 
 		void	beSigned(const Bureaucrat &cpy);
+		bool	isItSigned() const;
 		
 		virtual void	execute(Bureaucrat const & cpy) const = 0;
 
@@ -48,6 +49,11 @@ class AForm {
 				virtual const char * what() const throw();
 		};
 		
+		class UnsignedFormException : public std::exception {
+			public:
+				virtual const char * what() const throw();
+		};
+
 	private:
 		std::string _name;
 		bool _signed;
